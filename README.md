@@ -110,11 +110,15 @@ The function char* str_generator(void) is provided in the file generator.cpp. It
 
 1. Compile and link the source program ws.cpp to produce an executable file 55833129_555574846. 
 
-> g++ generator.cpp 55833129_555574846.cpp -lpthread -o 55833129_555574846
+        g++ generator.cpp crawler_classifier.cpp -lpthread -o cc
 
 2. Run the executable file.
-> ./55833129_555574846 [argument1] [argument2] [argument3] [argument4]
-
+                
+        ./cc [argument1] [argument2] [argument3] [argument4]
+e.g.
+        
+        ./cc 100000 100000 100000 5
+  
 
 
 
