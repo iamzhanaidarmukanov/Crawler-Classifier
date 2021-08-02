@@ -106,7 +106,14 @@ interval_A, interval_B, interval_C: integer, unit: microsecond, M: integer.
 The function char* str_generator(void) is provided in the file generator.cpp. It returns a string (char array) of length 50. Use it by declaring a prototype in code and compiling it along with source code.
 
 
+### 3.9 User guides:
 
+1. Compile and link the source program ws.cpp to produce an executable file 55833129_555574846. 
+
+> g++ generator.cpp 55833129_555574846.cpp -lpthread -o 55833129_555574846
+
+2. Run the executable file.
+> ./55833129_555574846 [argument1] [argument2] [argument3] [argument4]
 
 
 
