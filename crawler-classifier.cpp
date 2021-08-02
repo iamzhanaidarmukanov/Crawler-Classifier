@@ -13,11 +13,16 @@
 #include <algorithm>
 using namespace std;
 
+// Including generator function to grab articles
+char *str_generator(void);
+
 // Initializing Mutex for buffer access
 pthread_mutex_t buffer_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 // Initializing Mutex for screen access
 pthread_mutex_t screen_mutex = PTHREAD_MUTEX_INITIALIZER;
+
+
 
 // Defining Argument structure
 struct Argument {
@@ -55,6 +60,34 @@ void dequeue() {
     buffer.front = (buffer.front + 1) % 13;
     
 }
+
+// Utility function to add an item to the queue
+void enqueue(char *item) {
+
+    // Check for queue overflow
+    if (isFull()) {
+        cout << "OverFlow\nProgram Terminated\n";
+        exit(EXIT_FAILURE);
+    }
+
+    buffer.arr[buffer.rear] = item;
+    buffer.rear = (buffer.rear + 1) % 13;
+
+}
+
+// Utility function to return rear element in the queue
+char *peek() {
+
+    if (isEmpty()) {
+        cout << "UnderFlow\nProgram Terminated\n";
+        exit(EXIT_FAILURE);
+    }
+
+    return buffer.arr[buffer.front];
+
+}
+
+
 
 
 int main(int argc, char **argv) {
